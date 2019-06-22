@@ -6,11 +6,18 @@
     android:layout_height="match_parent"
     tools:context="de.hska.wheretostudy.RegistrationActivity"
     android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="292dp"
+        android:layout_marginBottom="4dp"
+        app:srcCompat="@drawable/image_register" />
+
     <EditText
+        android:id="@+id/nameDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="name"
-        android:id="@+id/nameDetail"/>
+        android:hint=" What's your name ? " />
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,25 +25,30 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:text=" Male" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:text=" Female" />
     </RadioGroup>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="email"
+        android:hint=" Please enter your email address"
         android:id="@+id/email"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="password"
+        android:hint=" Please type a secure password"
         android:id="@+id/password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/register"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:id="@+id/back"/>
 </LinearLayout>

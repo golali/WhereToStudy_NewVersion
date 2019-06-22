@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button mLogin;
+    private Button mLogin, mPw, mBack;
     private EditText mEmail, mPassword;
 
     private FirebaseAuth mAuth;
@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         mLogin = (Button) findViewById(R.id.login);
+        mPw = (Button) findViewById(R.id.pw);
+        mBack = (Button) findViewById(R.id.back2);
 
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
@@ -61,6 +63,23 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        mPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Please Create a new Account, until this function is implemented", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ChooseLoginRegistrationActivity.class);
+                startActivity(intent);
+                finish();
+                return;
             }
         });
     }

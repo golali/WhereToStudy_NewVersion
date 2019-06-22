@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private Button mRegister;
+    private Button mRegister, mBack;
     private EditText mEmail, mPassword, mName;
 
     private RadioGroup mRadioGroup;
@@ -54,6 +54,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         mRegister = (Button) findViewById(R.id.register);
+        mBack = (Button) findViewById(R.id.back);
 
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
@@ -91,6 +92,16 @@ public class RegistrationActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegistrationActivity.this, ChooseLoginRegistrationActivity.class);
+                startActivity(intent);
+                finish();
+                return;
             }
         });
     }
