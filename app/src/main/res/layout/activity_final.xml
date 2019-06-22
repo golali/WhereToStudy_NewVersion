@@ -7,10 +7,27 @@
     android:layout_height="match_parent"
     tools:context="de.hska.wheretostudy.RegistrationActivity"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:text="Congratulations !"
+        android:textColor="#000000"
+        android:textSize="29dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="223dp"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/image01" />
 <TableLayout
     android:id="@+id/simpleTableLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
     android:stretchColumns="1"> <!-- stretch the second column of the layout-->
 
     <!-- first row of the table layout-->
@@ -178,15 +195,15 @@
             android:text="Score 1"
             android:textColor="#000"
             android:textSize="14dp" />
-
     </TableRow>
 </TableLayout>
 
     <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:background="#12C0AB"
         android:onClick="startAgain"
         android:text="Start again" />
 </LinearLayout>
