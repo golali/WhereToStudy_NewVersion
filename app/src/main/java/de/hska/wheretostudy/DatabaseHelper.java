@@ -17,6 +17,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "DbSAMA";
 
     private static final String TBL_RANKING = "auswertung_table";
+    private static final String TBL_COUNTRY = "country_table";
+    private static final String TBL_COLLEGE = "college_table";
     private static final String COLUSER = "user";
     private static final String COLCOUNTRY = "country";
     private static final String COLRATING = "rating";
@@ -92,8 +94,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TBL_RANKING);
-        db.execSQL("DROP TABLE IF EXISTS " + "Country");
-        db.execSQL("DROP TABLE IF EXISTS " + "College");
+        db.execSQL("DROP TABLE IF EXISTS " + TBL_COUNTRY);
+        db.execSQL("DROP TABLE IF EXISTS " + TBL_COLLEGE);
         onCreate(db);
     }
 
@@ -103,7 +105,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void createCountryTable(SQLiteDatabase db) {
-        String createCountryTable = "CREATE TABLE Country(c_id Integer PRIMARY KEY, c_name varchar(200) NOT NULL, c_language varchar(200) NOT NULL, c_currency varchar(200) NOT NULL, c_drink varchar(200) NOT NULL)";
+        String createCountryTable = "CREATE TABLE TBL_COUNTRY(c_id Integer PRIMARY KEY, c_name varchar(200) NOT NULL, c_language varchar(200) NOT NULL, c_currency varchar(200) NOT NULL, c_drink varchar(200) NOT NULL)";
         db.execSQL(createCountryTable);
     }
 
@@ -119,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("c_language", language);
         contentValues.put("c_currency", currency);
         contentValues.put("c_drink", drinking);
-        return db.insert("Country", null, contentValues) != -1;
+        return db.insert(TBL_COUNTRY, null, contentValues) != -1;
     }
 
     boolean populateColleges(int college_id, String country, String name, SQLiteDatabase db) {
@@ -127,7 +129,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("college_id", college_id);
         contentValues.put("country_name", country);
         contentValues.put("college_name", name);
-        return db.insert("Colleges", null, contentValues) != -1;
+        return db.insert(TBL_COLLEGE, null, contentValues) != -1;
     }
 
     boolean populateAuswertung(String user, String country, SQLiteDatabase db) {
